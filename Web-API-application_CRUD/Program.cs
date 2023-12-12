@@ -1,6 +1,7 @@
 using API.Data;
 using Microsoft.EntityFrameworkCore;
 using API.Services;
+using API.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,8 @@ builder.Services.AddDbContext<DataContext>(options =>
    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<IContactService, ContactService>();
+builder.Services.AddScoped<ICompanyService, CompanyService>();
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
