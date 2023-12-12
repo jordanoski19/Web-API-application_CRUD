@@ -12,6 +12,7 @@ builder.Services.AddDbContext<DataContext>(options =>
 
 builder.Services.AddScoped<IContactService, ContactService>();
 builder.Services.AddScoped<ICompanyService, CompanyService>();
+builder.Services.AddScoped<ICountryService, CountryService>();
 
 
 builder.Services.AddControllers();
